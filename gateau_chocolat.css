@@ -8,9 +8,9 @@ body{
 }
 div.contenu{
     background-color: white;
-    margin: 60px 10% 80px 10%; /*HAUT DROITE BAS GAUCHE*/
-    padding:0px 30px 30px 30px;
-    min-width: 350px;
+    margin: 40px 8px 40px 8px; /*HAUT DROITE BAS GAUCHE*/
+    padding: 0px 8px 20px 8px;
+    /*min-width: 350px;*/ /*on ne veut pas de largeur mini pour la version tablette/mobile*/
     box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
     overflow: visible;
 }
@@ -58,7 +58,7 @@ table.info{
     width: 100%;
     color: white; 
     background-color: #6C829DC0; /*les 2 derniers caractères hexa derrière le code couleur permettent de gérer l'opacité : C0 souvant utilisé (FF = 100% opaque et 00 100% transparent et 80 valeur intermédiaire)*/
-    height: 80px;
+    height: 50px;
 }
 img.info{
     display: block;/*display block permet de dire à l'image de prendre 100% du bloc, et donc éviter les effets de liserets non désirés*/
@@ -69,13 +69,13 @@ img.info{
 }
 table.info td{
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     /*on ne modifie que les éléments td de la table*/
     vertical-align: top;
 }
 table.info th{
     text-align: center; /*facultatif car par défaut les headers sont centrés dans la table*/
-    font-size: 16px;
+    font-size: 14px;
     /*on ne modifie que les éléments th de la table*/
     vertical-align: bottom;
     padding-bottom: 8px;
@@ -84,14 +84,11 @@ div.info{
     position: relative;
 }
 div.colonne{
-    width: 45%; /*chaque colonne prendra ainsi 45% de la largeur*/
+    width: 100%; /*chaque colonne prendra ainsi 45% de la largeur*/
+    margin-top: 20px;
 }
 div.colonne1{   
     display: inline-block;
-    margin-right: 10%;
-}
-div.colonne2{
-    float: right; /*float right = affichage à droite*/
 }
 div.colonne h2{
     text-align: center;
@@ -138,3 +135,40 @@ table.preparation td.prepa_etape{
 table.preparation tr{
     height: 40px;
 }
+
+@media only screen and (min-width: 768px) {
+    /* Version pour ordinateur */
+    div.contenu{
+        min-width: 350px; 
+        margin: 60px 10% 80px 10%; /*HAUT DROITE BAS GAUCHE*/
+        padding:0px 30px 30px 30px;
+    }
+    table.info{
+        height: 80px;
+    }
+    table.info td{
+        font-size: 14px;
+    }
+    table.info th{
+        font-size: 16px;
+    }
+    div.colonne{
+        width: 45%; /*chaque colonne prendra ainsi 45% de la largeur*/
+    }
+    div.colonne1{   
+        margin-right: 10%; 
+    }
+    div.colonne2{
+        float: right; /*float right = affichage à droite*/
+    }
+  }
+
+  @media only screen and (min-width: 900px) {
+      /*cas des écrans trops grands*/
+      div.contenu{
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+  }
